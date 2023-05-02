@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="styles/reset.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="styles/style.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="node_modules/bootstrap/bootstrap.min.css"> -->
   <title>Document</title>
 </head>
 <body>
@@ -23,8 +24,9 @@
         </li>
       </ul>
     </div>
+
     <div class="right-container">
-      <header class="ontop">
+      <header class="ontop sticky-top">
           <ul class="logo-ul">
             <li>           
               <section class="logo">
@@ -34,7 +36,7 @@
             </li>
             <li>
               <section class="logo">
-                <a class="header ontop" style="padding-left: 1vw;">产品介绍</a>
+                <a class="header ontop" style="padding-left: 1vw;">产品简介</a>
               </section>
             </li>
           </ul>
@@ -45,6 +47,7 @@
           <li class="item header ontop"><a class="header ontop" >联系</a></li>
         </ul>
       </header>
+
       <section class="body">
         <div class="content">
           <section id="loop-window" class="loopplay">
@@ -91,6 +94,7 @@
               <div class="slide-progress-panel"></div>
             </ul>
           </section>
+
           <section class="introduce">
             <div class="introduce-title-panel">
               <span class="introduce-title scroll-bottom">产品核心</span>
@@ -132,34 +136,93 @@
               </div>
             </div>
           </section>
-          <section class="introduce">
+
+          <section class="introduce-2">
+
             <div class="introduce-title-panel">
-              <span class="introduce-title scroll-bottom">研发背景</span>
-              <span class="introduce-describe scroll-bottom"></span>
+              <span class="introduce-title scroll-bottom">产品特色</span>
               <hr class="introduce-gapline scroll-bottom">
-              <div class="learn-more scroll-bottom">
-                <span class="learn-more-word">了解更多</span>
-                <i class='bx bx-chevron-right'></i>
+            </div>
+
+            <div class="introduce-box-container-2">
+              <div class="intr-text">
+
+                <div class="feature-card scroll-bottom">
+                  <i class='bx bx-shape-triangle'></i>
+                  <h4 class="feature-card-h">无死角巡检</h4>
+                  <p>本作品创新性在 Jetson Nano 模块下运用仿生机械足，完成三角步态和波动
+                    步态的切换，实现全地形的移动；本作品创新地使用了真空发生装置与吸盘，实
+                    现机器人沿管壁移动进行巡检。</p>
+                </div>
+
+                <div class="feature-card scroll-bottom">
+                  <i class='bx bxs-analyse' ></i>
+                  <h4 class="feature-card-h">巡检精度高 </h4>
+                  <p>本产品将深度摄像头组和激光雷达高度集成与旋转云台中，可
+                    以进行 360°全方位监测；本巡检机器人装载了远场麦克风，可以进行巡检现场
+                    声接收，检测异常音频并进行声源定位。
+                    </p>
+                </div>
+
+              </div>
+              <div class="intr-img">
+                <img src="./resources/introduce/this.png" alt="">
+              </div>
+              <div class="intr-text">
+
+                <div class="feature-card scroll-bottom">
+                  <i class='bx bx-shape-circle' ></i>
+                  <h4 class="feature-card-h">精准控制</h4>
+                  <p>机器人采用机身姿态算法，保障机身稳定性；定位系统采用了 GPS-BD、
+                    ATGM336H-5N 双模定位模块，能耗低、定位精度高，保证机器人位置实时跟踪，
+                    对巡检机器人进行精确控制。
+                    </p>
+                </div>
+
+                <div class="feature-card scroll-bottom">
+                  <i class='bx bx-desktop' ></i>
+                  <h4 class="feature-card-h">数据可视化</h4>
+                  <p>“蚁形星” 基于 ROS 机器人系统的多功能集成化工六足巡检机器人
+                    起到了重要的作用；本作品连接起 Jetson Nano 模块与工业 5G+Wi-Fi6 模组实现
+                    高速算力，通过全向天线与工业互联网实时通信，完成数据的接受和传输。
+                    </p>
+                </div>
+
               </div>
             </div>
-            <div class="introduce-box-container">
-            </div>
+
           </section>
-          <section class="introduce-2">
-            <div class="left-flow-box scroll-bottom"></div>
-            <div class="right-flow-box-describe-panel scroll-bottom">
-              <span class="introduce-2-title">描述标题</span>
-              <hr class="introduce-2-gap">
-              <span class="introduce-2-describe"></span>
+
+          <section class="introduce-all">
+            
+            <div class="img-box-1">
+              <div class="img-cover">
+                <!-- <img src="./resources/03.bip.19.jpg" alt=""> -->
+              </div>
+              <span class=""></span>
             </div>
+            <div class="img-box-2">
+              <div class="img-cover">
+                <!-- <img src="./resources/03.bip.19.jpg" alt=""> -->
+              </div>
+              <span class=""></span>
+            </div>
+            <div class="img-box-3">
+              <div class="img-cover">
+                <!-- <img src="./resources/03.bip.19.jpg" alt=""> -->
+              </div>
+              <span class=""></span>
+            </div>
+            <div class="img-box-4">
+              <div class="img-cover">
+                <!-- <img src="./resources/03.bip.19.jpg" alt=""> -->
+              </div>
+              <span class=""></span>
+            </div>
+
           </section>
-          <section class="introduce-2">
-            <div class="right-flow-box scroll-bottom"></div>
-            <div class="left-flow-box-describe-panel scroll-bottom">
-              <span class="introduce-2-title">描述标题</span>
-              <hr class="introduce-2-gap">
-              <span class="introduce-2-describe"></span>
-            </div>
+          <section class="news">
+            
           </section>
           <section class="aboutus">
             <span class="touch-us">联系我们</span>
@@ -173,6 +236,7 @@
         </div>
       </section>
     </div>
+
   </div>
 </body>
 <script src="scripts/content.js"></script>

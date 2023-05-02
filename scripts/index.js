@@ -95,7 +95,7 @@ const handleScrollAnimation = () => {
 window.addEventListener('scroll', (e) => {
   window_scroll_position = window.scrollY;
   handleScrollAnimation();
-  console.log(window_scroll_position);
+  // console.log(window_scroll_position);
   if(window_scroll_position < 600){
     // loop_play_window.style.opacity = 1 - window_scroll_position / 600
     header_ul_li[0].style.top = '0';
@@ -135,6 +135,11 @@ window.addEventListener('scroll', (e) => {
     });
     header.classList.remove('untop');
     header.classList.add('ontop');
+  }
+  if(window_scroll_position == document.querySelector('.aboutus').offsetTop){
+    header.style.position = 'relative'
+  }else {
+    header.style.position = 'sticky'
   }
 })
 
