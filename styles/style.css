@@ -881,7 +881,7 @@ li.slide {
 }
 
 .introduce-2 .introduce-box-container-2 .intr-img img{
-  height: 80%;
+  height: auto;
   width: 90%;
   position: absolute;
   top: calc(50% - 40%);
