@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="styles/style.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div class="left-container">
+      <ul>
+        <li class="left-item active">
+          <i class='bx bxs-home-alt-2'></i>
+          <span>首页</span>
+        </li>
+        <li class="left-item">
+          <i class='bx bxs-dashboard' ></i>
+          <span>面板</span>
+        </li>
+      </ul>
+    </div>
+    <div class="right-container">
+      <header class="ontop">
+          <ul class="logo-ul">
+            <li>           
+              <section class="logo">
+                <i class='bx bx-menu header ontop'></i>
+                <a class="header ontop title-1" href="#">蚁形星</a>
+              </section>
+            </li>
+            <li>
+              <section class="logo">
+                <a class="header ontop" style="padding-left: 1vw;">产品介绍</a>
+              </section>
+            </li>
+          </ul>
+        <ul class="menu">
+          <li class="item header ontop"><a class="header ontop" href="#">首页</a></li>
+          <li class="item header ontop"><a class="header ontop" >介绍</a></li>
+          <li class="item header ontop"><a class="header ontop" >新闻</a></li>
+          <li class="item header ontop"><a class="header ontop" >联系</a></li>
+        </ul>
+      </header>
+      <section class="body">
+        <div class="content">
+          <section id="loop-window" class="loopplay">
+            <ul class="slides">
+              <input type="radio" id="control-1" name="control" checked>
+              <input type="radio" id="control-2" name="control">
+              <input type="radio" id="control-3" name="control">
+              <li class="slide">
+                <div class="font-panel slided">
+                  <span class="slide-title slide-title-1">蚁形星</span>
+                  <span class="slide-describe">基于ROS机器人系统的多功能集成化工六足巡检机器人</span>
+                  <div class="slide-btn">
+                    <i class='bx bx-right-arrow-circle'></i>
+                    <span class="goto-describe">查看详情</span>
+                  </div>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="font-panel">
+                  <span class="slide-title"><span class="slide-title-lg">智</span>为生产</span>
+                  <span class="slide-title" style="padding-left: 10vw;"><span class="slide-title-lg">志</span>在安全</span>
+                  <span class="slide-describe">无死角巡检 全地形移动 双定位模块精准控制</span>
+                  <div class="slide-btn" >
+                    <i class='bx bx-right-arrow-circle'></i>
+                    <span class="goto-describe dscb2">了解更多</span>
+                  </div>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="font-panel">
+                  <span class="slide-title">新一代的智能巡检机器人</span>
+                  <span class="slide-describe">专心致力于智能化，无人化监测预警</span>
+                  <div class="slide-btn">
+                    <i class='bx bx-right-arrow-circle'></i>
+                    <span class="goto-describe">了解详情</span>
+                  </div>
+                </div>
+              </li>
+              <div class="controls-visible">
+                <label for="control-1"></label>
+                <label for="control-2"></label>
+                <label for="control-3"></label>
+              </div>
+              <div class="slide-progress-panel"></div>
+            </ul>
+          </section>
+          <section class="introduce">
+            <div class="introduce-title-panel">
+              <span class="introduce-title scroll-bottom">产品核心</span>
+              <span class="introduce-describe scroll-bottom"></span>
+              <hr class="introduce-gapline scroll-bottom">
+              <div class="learn-more scroll-bottom">
+                <span class="learn-more-word">了解更多</span>
+                <i class='bx bx-chevron-right'></i>
+              </div>
+            </div>
+            <div class="introduce-box-container">
+              <div class="introduce-box scroll-bottom card">
+                <div class="content">
+                  <h2>一</h2>
+                  <p>偏平机身和仿生机械足实现低矮区域移动，通过仿生机械足步态切换辅以真空气泵吸盘实现机器人轻松越障、吸附管道和楼梯爬行，巡检无死角</p>
+                  <button>查看更多</button>
+              </div>
+              </div>
+              <div class="introduce-box scroll-bottom card">
+                <div class="content">
+                  <h2>二</h2>
+                  <p>集3D深度摄像头、红外热像仪、可见光摄像头、激光雷达、气体传感器、远场麦克风阵列于一体，实现图像视频、温度、声音、气体类型多方面数据的检测</p>
+                  <button>查看更多</button>
+              </div>
+              </div>
+              <div class="introduce-box scroll-bottom card">
+                <div class="content">
+                  <h2>三</h2>
+                  <p>利用工业5G+Wi-Fi6模组和全向天线与工业互联网通信，实现巡检数据实时上传，实现人机协同、多机协同工作。</p>
+                  <button>查看更多</button>
+              </div>
+              </div>
+              <div class="introduce-box scroll-bottom card">
+                <div class="content">
+                  <h2>四</h2>
+                  <p>搭载电脑端与手机端程序，实现工人对机器人工作模式和工作状态的实时监控、完成自主巡检与人工辅助巡检不同模式的切换、不同巡检功能的开关控制</p>
+                  <button>查看更多</button>
+              </div>
+              </div>
+            </div>
+          </section>
+          <section class="introduce">
+            <div class="introduce-title-panel">
+              <span class="introduce-title scroll-bottom">研发背景</span>
+              <span class="introduce-describe scroll-bottom"></span>
+              <hr class="introduce-gapline scroll-bottom">
+              <div class="learn-more scroll-bottom">
+                <span class="learn-more-word">了解更多</span>
+                <i class='bx bx-chevron-right'></i>
+              </div>
+            </div>
+            <div class="introduce-box-container">
+            </div>
+          </section>
+          <section class="introduce-2">
+            <div class="left-flow-box scroll-bottom"></div>
+            <div class="right-flow-box-describe-panel scroll-bottom">
+              <span class="introduce-2-title">描述标题</span>
+              <hr class="introduce-2-gap">
+              <span class="introduce-2-describe"></span>
+            </div>
+          </section>
+          <section class="introduce-2">
+            <div class="right-flow-box scroll-bottom"></div>
+            <div class="left-flow-box-describe-panel scroll-bottom">
+              <span class="introduce-2-title">描述标题</span>
+              <hr class="introduce-2-gap">
+              <span class="introduce-2-describe"></span>
+            </div>
+          </section>
+          <section class="aboutus">
+            <span class="touch-us">联系我们</span>
+            <span class="touch-us-balabala">联系我们联系我们联系我们联系我们联系我们联系我们联系我们联系我们联系我们</span>
+            <div class="somelogo">
+              <i class='bx bxl-facebook-circle'></i>
+              <i class='bx bxl-twitter' ></i>
+              <i class='bx bxl-twitter' ></i>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+<script src="scripts/content.js"></script>
+<script src="scripts/index.js"></script>
+</html>
