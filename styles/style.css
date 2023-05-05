@@ -919,22 +919,35 @@ li.slide {
 
 .banner {
   width:100%;
-  height:60vh;
-  border: #000 2px solid;
+  height:80vh;
   position: relative;
   overflow: hidden;
 }
 
 .banner .static-bg {
-  /* position: absolute;
+  /* border: #000 2px solid; */
+  position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 200%;
+  height: auto;
   background: url('../resources/introall/3.jpg') no-repeat;
-  background-size: contain; */
+  background-size: cover;
+  filter: brightness(0.5);
+}
+
+.banner .textContainer {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner .textContainer .titleFrame {
 
 }
 
