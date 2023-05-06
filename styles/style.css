@@ -1140,10 +1140,22 @@ li.slide {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 .aboutus .contcnt .itt {
   height: 80%;
   border: 2px #fff solid;
+}
+.aboutus .contcnt .itt1 {
+  width: 25%;
+} 
+.aboutus .contcnt .itt2 {
+  width: 30%;
+
+}
+.aboutus .contcnt .itt3 {
+  width: 30%;
+
 }
 /* .introduce-all {
   width: 100%;
