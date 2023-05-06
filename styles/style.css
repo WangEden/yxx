@@ -747,6 +747,22 @@ li.slide {
   animation: fade-in-bottom 1s ease-in-out both;
 }
 
+.scroll-bottom-fast {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.scroll-bottom-fast.bottom-scrolled{
+  animation: fade-in-bottom 0.5s ease-in-out both;
+}
+
+.scroll-bottom-low {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.scroll-bottom-low.bottom-scrolled{
+  animation: fade-in-bottom 1.5s ease-in-out both;
+}
+
 @keyframes fade-in-bottom {
   0% {
     transform: translateY(50px);
@@ -1103,6 +1119,7 @@ li.slide {
   backdrop-filter: blur(100px);
   background-color: rgb(29, 30, 32);
   position: relative;
+  overflow: hidden;
 }
 
 .culture .imbg {
@@ -1115,21 +1132,74 @@ li.slide {
 .culture .i1 {
   top:0;
   left: 0;
+  transform: skewX(-10deg) translateX(-2vw);
 }
 
 .culture .i2 {
   bottom: 0;
   right: 0;
+  transform: skewX(-10deg) translateX(2vw);
 }
 
 .culture .cardContainer {
-  border: #fff 2px solid;
+  /* border: #fff 2px solid; */
   width: 80%;
-  height: 60%;
+  height: 70%;
   position: absolute;
-  top: calc(50% - 30%);
+  top: calc(50% - 35%);
   left: calc(50% - 40%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.culture .cardContainer .culcard {
+  /* border: red 2px solid; */
+  width: 22%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5%;
+  position: relative;
+  background: rgba(0,0,0,0.6);
+  transform: skewX(-10deg);
+  align-items: center;
+}
+
+.culture .cardContainer .culcard::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 20%;
+  height: 2%;
+  bottom: 8%;
+  right: 8%;
+}
+
+.culture .cardContainer .culcard span, 
+.culture .cardContainer .culcard p {
+  color: #fff;
+  letter-spacing: 0.2em;
+  text-align: left;
+}
+
+.culture .cardContainer .culcard span {
+  flex: 0.3;
+  font-size: 5em;
+  font-family: 'ZCOOL XiaoWei', sans-serif;
+}
+
+.culture .cardContainer .culcard p {
+  flex: 0.6;
+  font-size: 1.1em;
+  line-break: auto;
+  width: 80%;
+  letter-spacing: 0.3em;
+  line-height: 2.5em;
+}
+
 
 /* about us pad */
 .body .content .aboutus {
@@ -1172,7 +1242,7 @@ li.slide {
 }
 .aboutus .contcnt .itt {
   height: 80%;
-  border: 2px #fff solid;
+  border: 2px red solid;
 }
 .aboutus .contcnt .itt1 {
   width: 25%;

@@ -23,6 +23,8 @@ left_bar_btn.addEventListener('click', () => {
 })
 
 const bottom_scroll_element = document.querySelectorAll('.scroll-bottom');
+const bottom_scroll_element_f = document.querySelectorAll('.scroll-bottom-fast');
+const bottom_scroll_element_l = document.querySelectorAll('.scroll-bottom-low');
 const left_scroll_element = document.querySelectorAll('.scroll-left');
 const right_scroll_element = document.querySelectorAll('.scroll-right');
 bottom_scroll_element.forEach((e) => {
@@ -66,6 +68,22 @@ const hideScrollElement = (element, direction) => {
 }
 
 const handleScrollAnimation = () => {
+  bottom_scroll_element_f.forEach((e) => {
+    if(elementInView(e, 100)) {
+      displayScrollElemnt(e, 'bottom');
+    }
+    else {
+      hideScrollElement(e, 'bottom');
+    }
+  })
+  bottom_scroll_element_l.forEach((e) => {
+    if(elementInView(e, 100)) {
+      displayScrollElemnt(e, 'bottom');
+    }
+    else {
+      hideScrollElement(e, 'bottom');
+    }
+  })
   bottom_scroll_element.forEach((e) => {
     if(elementInView(e, 100)) {
       displayScrollElemnt(e, 'bottom');
