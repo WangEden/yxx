@@ -178,3 +178,4 @@ let left_item = left_container.querySelector("li:nth-child(2)");
 left_item.addEventListener('click', (e) => {
   window.location.href = "pages/login.html"
 })
+
