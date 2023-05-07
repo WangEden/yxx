@@ -11,7 +11,7 @@ const container = document.getElementById('three-container');
 // Scene
 const scene = new THREE.Scene()
 // Gui
-const gui = new dat.GUI()
+// const gui = new dat.GUI()
 // Size
 const sizes = {
     width: container.clientWidth,
@@ -20,6 +20,7 @@ const sizes = {
 // Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.set(4, 4, 12)
+camera.layers.enable(1)
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
@@ -83,9 +84,9 @@ const tick = () => {
 }
 tick()
 // listenResize(sizes, camera, renderer)
-gui.add(directionLightHelper, 'visible').name('lightHelper visible')
-gui.add(directionalLightCameraHelper, 'visible').name('lightCameraHelper visible')
-gui.add(controls, 'autoRotate')
+// gui.add(directionLightHelper, 'visible').name('lightHelper visible')
+// gui.add(directionalLightCameraHelper, 'visible').name('lightCameraHelper visible')
+// gui.add(controls, 'autoRotate')
 
 var mtlLoader = new MTLLoader()
 var objLoader = new OBJLoader()
@@ -114,7 +115,69 @@ mtlLoader.load('../objs/3d-model.mtl', function(materials) {
     })
 })
 
+// function
+const renderEffect = function(model) {
+  let edgeGroup = new THREE.Group();
+  model.traverse((obj) => {
+        // 由于汽车由许多mesh组成，因此需要将所有的mesh都转换为EdgesGeometry材质
+    if(obj.type === 'Mesh') edgeGroup.add(_renderFrameMesh(obj));
+  });
+  scene.add(edgeGroup);
+  // 重置变换
+    function _renderFrameMesh(obj) {
+  const edges = new THREE.EdgesGeometry(obj.geometry);
+  let color = new THREE.Color(0.1, 0.3, 1);
+  var lineBasematerial = new THREE.LineBasicMaterial({
+    color: color,
+    side: THREE.FrontSide,
+        linecap: 'round',
+        linejoin: 'round',
+  });
+      const line = new THREE.LineSegments(edges, lineBasematerial);
+  return line;
+}
+}
+const uperVertext = `
+varying vec3 vPosition;
+void main()
+{
+  vPosition = position;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1 );
+}
+`;
 
+const uperFragment = `
+varying vec3 vPosition;
+  uniform float height;
+  uniform vec4 uFlowColor;
+  uniform vec4 uModelColor;
+void main()
+{
+  //模型的基础颜色
+ vec4 distColor=uModelColor;
+// 流动范围当前点z的高度加上流动线的高度
+ float topY = vPosition.y +0.02;
+if (height > vPosition.y && height < topY) {
+ // 颜色渐变 
+  distColor = uFlowColor; 
+}
+
+ gl_FragColor = distColor;
+}`;
+function calcHeight() {
+  let length = scanConfig.end - scanConfig.start;
+    // 扫描动态效果实现
+  scanConfig.value += length / scanConfig.during / 60;
+  if (scanConfig.value >= scanConfig.end) {
+    scanConfig.value = scanConfig.start;
+  }
+}
+function render() {
+  renderer.render(scene, camera);
+  calcHeight()
+  controls.update()
+  requestAnimationFrame(render);
+}
 
 
 
