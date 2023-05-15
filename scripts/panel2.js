@@ -22,11 +22,16 @@ const init = () => {
     // 视角, 视野, 近点, 远点
     camera = new THREE.PerspectiveCamera(60, aspect, 0.01, 5000);
     // 设置相机位置
-    camera.position.set(50, 0, 0);
+    camera.position.set(5, 0, 0);
 
     // 设置灯光: 环绕光：颜色，亮度
-    const ambientLight = new THREE.AmbientLight(0x404040, 20);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 20);
     scene.add(ambientLight);
+
+    // 创建坐标轴
+    const axes = new THREE.AxesHelper(100);
+    scene.add(axes);
+    renderer.render(scene, camera);
 
     // 创建模型加载器
     const loader = new GLTFLoader();
@@ -37,6 +42,7 @@ const init = () => {
     loader.load('../models/gc.gltf', 
     function (gltf) {
         scene.add( gltf.scene );
+        renderer.render(scene, camera);
         
         // gltf.animations; // Array<THREE.AnimationClip>
 		// gltf.scene; // THREE.Group
@@ -59,4 +65,3 @@ const init = () => {
 };
 
 init();
-renderer.render(scene, camera);
