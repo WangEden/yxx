@@ -120,5 +120,5 @@ particlesJS('background',
 
 let login_btn = document.querySelector('.login-btn button');
 login_btn.addEventListener('click', (e) => {
-  window.location.href = "./panel2.html"
+  window.location.href = "./panel.html"
 })

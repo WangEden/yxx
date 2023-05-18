@@ -9,6 +9,8 @@ let header_words = document.querySelectorAll('.right-container header .header');
 let window_scroll_position = 0;
 let loop_play_window = document.getElementById('loop-window');
 
+var pageChange = false;
+
 left_bar_btn.addEventListener('click', () => {
   if(!left_container.classList.contains('unfold')){
     left_container.classList.add('unfold');
@@ -114,51 +116,60 @@ window.addEventListener('scroll', (e) => {
   window_scroll_position = window.scrollY;
   handleScrollAnimation();
   // console.log(window_scroll_position);
-  if(window_scroll_position < 600){
-    // loop_play_window.style.opacity = 1 - window_scroll_position / 600
-    header_ul_li[0].style.top = '0';
-    header_ul_li[1].style.top = '100%';
-    header_ul[1].style.visibility = 'visible';
-    header_ul[1].style.opacity = '1';
-  }
-  else {
-    header_ul_li[0].style.top = '-100%';
-    header_ul_li[1].style.top = '0';
-    header_ul[1].style.visibility = 'hidden';
-    header_ul[1].style.opacity = '0';
-  }
-  if(window_scroll_position > 705 && window_scroll_position < 730) {
-    window.scrollTo({
-      // top: document.querySelector('#loop-window').offsetBottom,
-      top:720,
-      behavior: "instant"
-    });
-  }
-  if(window_scroll_position > 1) {
-    header_words.forEach((item) => {
-      item.classList.remove('ontop');
-      item.classList.add('untop');
-    });
-    header.classList.remove('ontop');
-    header.classList.add('untop');
-    if(left_container.classList.contains('unfold')){
-      left_container.classList.remove('unfold');
-      left_container.classList.add('fold');
+  if(!pageChange){
+    if(window_scroll_position > 705 && window_scroll_position < 730) {
+      window.scrollTo({
+        // top: document.querySelector('#loop-window').offsetBottom,
+        top:720,
+        behavior: "instant"
+      });
+    }
+
+    if(window_scroll_position > 1) {
+      header_words.forEach((item) => {
+        item.classList.remove('ontop');
+        item.classList.add('untop');
+      });
+      header.classList.remove('ontop');
+      header.classList.add('untop');
+      if(left_container.classList.contains('unfold')){
+        left_container.classList.remove('unfold');
+        left_container.classList.add('fold');
+      }
+    }
+    else {
+      header_words.forEach((item) => {
+        item.classList.remove('untop');
+        item.classList.add('ontop');
+      });
+      header.classList.remove('untop');
+      header.classList.add('ontop');
+    }
+    if(window_scroll_position == document.querySelector('.aboutus').offsetTop){
+      header.style.position = 'relative'
+    }else {
+      header.style.position = 'sticky'
     }
   }
   else {
-    header_words.forEach((item) => {
-      item.classList.remove('untop');
-      item.classList.add('ontop');
-    });
-    header.classList.remove('untop');
-    header.classList.add('ontop');
+    if(window_scroll_position > 1) {
+      header_words.forEach((item) => {
+        item.classList.remove('ontop');
+        item.classList.add('untop');
+      });
+      header.classList.remove('ontop');
+      header.classList.add('untop');
+      if(left_container.classList.contains('unfold')){
+        left_container.classList.remove('unfold');
+        left_container.classList.add('fold');
+      }
+      intr();
+    }
+    else {
+      index();
+    }
   }
-  if(window_scroll_position == document.querySelector('.aboutus').offsetTop){
-    header.style.position = 'relative'
-  }else {
-    header.style.position = 'sticky'
-  }
+
 })
 
 let input = document.querySelectorAll('.slides input');
@@ -196,4 +207,62 @@ let left_item = left_container.querySelector("li:nth-child(2)");
 left_item.addEventListener('click', (e) => {
   window.location.href = "pages/login.html"
 })
+
+let body1 = document.getElementById('body1');
+let body2 = document.getElementById('body2');
+let introBtns = document.querySelectorAll('.right-container .menu li');
+let introBtns_1 = document.querySelectorAll('.goto-describe');
+let introBtn_2 = document.querySelector('.learn-more-word');
+let introBtns_3 = document.querySelectorAll('.card button');
+let leftBtn = document.querySelector('.logo i');
+body2.classList.add('hide');
+introBtns[0].addEventListener('click', (e) => {
+  body1.classList.remove('hide');
+  leftBtn.classList.remove('hide');
+  body2.classList.add('hide');
+  pageChange=false;
+})
+introBtns[1].addEventListener('click', (e) => {
+  body1.classList.add('hide');
+  leftBtn.classList.add('hide');
+  body2.classList.remove('hide');
+  pageChange=true;
+})
+introBtns_1.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    body1.classList.add('hide');
+    leftBtn.classList.add('hide');
+    body2.classList.remove('hide');
+    pageChange=true;
+  })
+});
+introBtn_2.addEventListener('click', (e) => {
+  body1.classList.add('hide');
+  body2.classList.remove('hide');
+  leftBtn.classList.add('hide');
+  pageChange=true;
+});
+introBtns_3.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    body1.classList.add('hide');
+    body2.classList.remove('hide');
+    leftBtn.classList.add('hide');
+    pageChange=true;
+  })
+});
+function index() {
+  header_ul_li[0].style.top = '0';
+  header_ul_li[1].style.top = '100%';
+  header_ul[1].style.visibility = 'visible';
+  header_ul[1].style.opacity = '1';
+}
+function intr() {
+  header_ul_li[0].style.top = '-100%';
+  header_ul_li[1].style.top = '0';
+  header_ul[1].style.visibility = 'hidden';
+  header_ul[1].style.opacity = '0';
+}
+
+
+
 

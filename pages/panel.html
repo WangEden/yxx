@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/panel.css">
+    <script src="../scripts/echarts.min.js"></script>
+    <script src="https://cdn.bootcss.com/dat-gui/0.7.1/dat.gui.min.js"></script>
+    <script src="../scripts/jquery.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "../node_modules/three/build/three.module.js"
+            }
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <canvas class="background"></canvas>
+	<div class="head clearfix">
+        <div class="head-item left-head"></div>
+        <h1 class="pulll_left">某个大数据监控平台</h1>
+        <div class="head-item right-head"></div>
+        <script>
+            // var t = null;
+            //     t = setTimeout(time,1000);//開始运行
+            //     function time() {
+            //         clearTimeout(t);//清除定时器
+            //         dt = new Date();
+            //             var y=dt.getFullYear();
+            //             var mt=dt.getMonth()+1;
+            //             var day=dt.getDate();
+            //             var h=dt.getHours();//获取时
+            //             var m=dt.getMinutes();//获取分
+            //             var s=dt.getSeconds();//获取秒
+            //         document.getElementById("showTime").innerHTML = y+"/"+mt+"/"+day+" "+h+":"+m+":"+s+"";
+            //         t = setTimeout(time,1000); //设定定时器，循环运行     
+            //     } 
+        </script>
+    </div>
+    <div class="container">
+        <div class="top-part">
+            <div class="top-item left-top">
+                <div class="left-top-1"><div id="echarts_4"></div></div>
+                <div class="left-top-2">
+                    <table class="table_1">
+                        <tr class="title">
+                          <th></th>
+                          <th>列1</th>
+                          <th>列2</th>
+                          <th>列3</th>
+                          <th>列4</th>
+                          <th>列5</th>
+                        </tr>
+                        
+                         <tr>
+                          <td class="title_2">Data A</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                         </tr>
+                      
+                         <tr>
+                          <td class="title_2">Data B</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                         </tr>
+                      
+                         <tr>
+                          <td class="title_2">Data C</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                         </tr>
+                      
+                         <tr>
+                          <td class="title_2">Data D</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                         </tr></table>
+                </div>
+            </div>
+            <div class="top-item mid-top">
+                <div id="three-container">
+                    <canvas id="mainCanvas"></canvas>
+                </div>
+            </div>
+            <div class="top-item right-top">
+                <div class="right-top-1">
+                    <div class="toptext1">
+                        <text class="toptext1-1">完成率</text>
+                        <text class="toptext1-2">合格率</text>
+                    </div>
+                    <div id="echarts_6_7_container">
+                        <div id="echarts_6" class="report1" style="transform: scale(1)"></div>
+                        <div id="echarts_7" class="report2" style="transform: scale(1)"></div>
+                    </div>
+                </div>
+                <div class="right-top-2">
+                    <div id="echarts_8"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bot-part">
+            <div class="bot-item left-bot">
+                <div class="left-bot-title">双折线图</div>
+                <div class="left-bot-chart"></div>
+            </div>
+            <div class="bot-item mid-bot">
+                <div class="mid-bot-top">
+                    <div class="mid-bot-top-1">蚊香图1</div>
+                    <div class="mid-bot-top-2">蚊香图2</div>
+                    <div class="mid-bot-top-3">蚊香图3</div>
+                </div>
+                <div class="mid-bot-bot">
+                    <div class="mid-bot-bot-1"><div id="echarts_2"></div></div>
+                    <div class="mid-bot-bot-2"><div id="echarts_1"></div></div>
+                    <div class="mid-bot-bot-3"><div id="echarts_3"></div></div>
+                </div>
+            </div>
+            <div class="bot-item right-bot">
+                <div class="right-bot-title">条形图</div>
+                <div class="right-bot-chart">
+                    <div id="echarts_5" style="width: inherit;height:inherit;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../scripts/panel-bg.js"></script>
+<script src="../scripts/panel-content.js"></script>
+<script src="../scripts/panel-model.js" type="module"></script>
+</html>
